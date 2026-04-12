@@ -13,8 +13,14 @@
     nav {
       display: flex;
       justify-content: space-between;
-      padding: 20px 50px;
+      align-items: center;
+      padding: 20px 60px;
       background: white;
+    }
+
+    nav h2 {
+      font-size: 20px;
+      color: #5C3A21;
     }
 
     nav a {
@@ -29,21 +35,30 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 80px;
+      padding: 60px 80px; /* reduced to move content up */
     }
 
     .hero h1 {
-      font-size: 55px;
+      font-size: 60px;
+      margin-bottom: 10px;
     }
 
     .hero span {
-      color: #9C6B4F;
+      color: #5C3A21; /* darker brown */
     }
 
-    .hero img {
-  width: 300px;
-  border-radius: 30px;
+    .hero p {
+      font-size: 18px;
+      margin-top: 10px;
     }
+
+    /* IMAGE STYLE */
+    .hero img {
+      width: 320px;
+      border-radius: 25px; /* modern rounded rectangle */
+      box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+    }
+
   </style>
 </head>
 
@@ -51,7 +66,7 @@
 
 <!-- NAVBAR -->
 <nav>
-  <h2>Sowmiya</h2>
+  <h2>Welcome to my portfolio</h2>
   <div>
     <a href="#">Home</a>
     <a href="#">About</a>
@@ -64,9 +79,13 @@
 <section class="hero">
   <div>
     <h1>Hi,<br>I'm <span>Sowmiya</span></h1>
-    <p>Data Analyst | Business Analyst</p>
+    <p>
+      Analyst – HSBC | MS Business Analytics, UoE ’24 | 
+      Business & Data Analytics Enthusiast | Finance Domain
+    </p>
   </div>
-  <img src="profile.jpeg">
+
+  <img src="profile.jpg">
 </section>
 
 </body>
