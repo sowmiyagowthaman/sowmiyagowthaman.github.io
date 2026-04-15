@@ -4,6 +4,10 @@
   <title>Sowmiya Portfolio</title>
 
   <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
@@ -33,6 +37,11 @@
       font-weight: 600;
     }
 
+    nav a:hover {
+      color: #6b4a2f;
+      transition: 0.3s;
+    }
+
     /* HERO SECTION */
     .hero {
       display: flex;
@@ -52,7 +61,7 @@
     }
 
     .hero-text span {
-      color: #4b2e1e; /* darker brown */
+      color: #4b2e1e;
       font-weight: bold;
     }
 
@@ -75,12 +84,17 @@
       font-size: 14px;
     }
 
+    .btn:hover {
+      background: #4b2e1e;
+      transition: 0.3s;
+    }
+
     /* IMAGE */
     .hero-img img {
       width: 350px;
       height: 450px;
       object-fit: cover;
-      border-radius: 180px; /* curved shape like reference */
+      border-radius: 180px;
       box-shadow: 0 20px 40px rgba(0,0,0,0.2);
     }
 
@@ -106,6 +120,27 @@
       color: #666;
     }
 
+    /* ABOUT SECTION */
+    #about {
+      padding: 80px;
+      background: #ffffff;
+    }
+
+    #about h2 {
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+
+    #about h3 {
+      margin-top: 20px;
+      color: #4b2e1e;
+    }
+
+    #about p {
+      color: #444;
+      line-height: 1.6;
+    }
+
   </style>
 </head>
 
@@ -115,15 +150,15 @@
 <nav>
   <h2>Welcome! Take a look at my work and journey!</h2>
   <div>
-    <a href="#">Home</a>
-    <a href="#">About</a>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
     <a href="#">Projects</a>
     <a href="#">Contact</a>
   </div>
 </nav>
 
 <!-- HERO -->
-<section class="hero">
+<section class="hero" id="home">
 
   <div class="hero-text">
     <h1>
@@ -168,6 +203,23 @@
     <p>Creating dashboards using Power BI & Tableau.</p>
   </div>
 
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <h2>About Me</h2>
+
+  <p>
+    I am an Analyst at HSBC with a Master's in Business Analytics (UoE '24).
+    I have experience in data analysis, machine learning, and financial analytics,
+    focusing on turning data into actionable business insights.
+  </p>
+
+  <h3>Education</h3>
+  <p>MSc Business Analytics – University of Exeter (2024)</p>
+
+  <h3>Experience</h3>
+  <p>Analyst – HSBC</p>
 </section>
 
 </body>
