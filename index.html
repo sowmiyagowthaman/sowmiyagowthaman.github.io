@@ -21,7 +21,6 @@
       justify-content: space-between;
       align-items: center;
       padding: 25px 80px;
-      background: transparent;
     }
 
     nav h2 {
@@ -42,7 +41,7 @@
       transition: 0.3s;
     }
 
-    /* HERO SECTION */
+    /* HERO */
     .hero {
       display: flex;
       justify-content: space-between;
@@ -86,7 +85,6 @@
 
     .btn:hover {
       background: #4b2e1e;
-      transition: 0.3s;
     }
 
     /* IMAGE */
@@ -98,7 +96,7 @@
       box-shadow: 0 20px 40px rgba(0,0,0,0.2);
     }
 
-    /* FEATURES SECTION */
+    /* FEATURES */
     .features {
       display: flex;
       justify-content: space-around;
@@ -120,61 +118,65 @@
       color: #666;
     }
 
-    /* ABOUT SECTION */
-    /* ABOUT SECTION */
-#about {
-  padding: 80px;
-  background: #ffffff;
-}
+    /* ABOUT */
+    #about {
+      padding: 80px;
+      background: #ffffff;
+    }
 
-#about h2 {
-  font-size: 32px;
-  margin-bottom: 20px;
-}
+    #about h2 {
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
 
-.about-intro {
-  max-width: 700px;
-  color: #444;
-  margin-bottom: 40px;
-}
+    .about-intro {
+      max-width: 700px;
+      color: #444;
+      margin-bottom: 40px;
+    }
 
-/* TIMELINE */
-.timeline {
-  position: relative;
-  margin-left: 20px;
-  padding-left: 20px;
-  border-left: 2px solid #d6cfc7; /* light beige line */
-}
+    /* TIMELINE */
+    .timeline {
+      position: relative;
+      margin-left: 20px;
+      padding-left: 20px;
+      border-left: 2px solid #d6cfc7;
+    }
 
-.timeline h3 {
-  margin-top: 30px;
-  color: #4b2e1e; /* your brown */
-}
+    .timeline h3 {
+      margin-top: 30px;
+      color: #4b2e1e;
+    }
 
-.timeline-item {
-  position: relative;
-  margin-bottom: 30px;
-}
+    .timeline-item {
+      position: relative;
+      margin-bottom: 30px;
+    }
 
-.timeline-item .dot {
-  position: absolute;
-  left: -11px;
-  top: 5px;
-  width: 12px;
-  height: 12px;
-  background: #6b4a2f; /* brown dot */
-  border-radius: 50%;
-}
+    .timeline-item .dot {
+      position: absolute;
+      left: -11px;
+      top: 5px;
+      width: 12px;
+      height: 12px;
+      background: #6b4a2f;
+      border-radius: 50%;
+    }
 
-.timeline-item .content h4 {
-  margin: 0;
-  color: #6b4a2f;
-}
+    .timeline-item .content h4 {
+      margin: 0;
+      color: #6b4a2f;
+    }
 
-.timeline-item .content p {
-  margin: 5px 0;
-  color: #555;
-}
+    .timeline-item .content p {
+      margin: 5px 0;
+      color: #555;
+    }
+
+  </style>
+</head>
+
+<body>
 
 <!-- NAVBAR -->
 <nav>
@@ -189,7 +191,6 @@
 
 <!-- HERO -->
 <section class="hero" id="home">
-
   <div class="hero-text">
     <h1>
       Hi,<br>
@@ -207,12 +208,10 @@
   <div class="hero-img">
     <img src="profile.jpeg">
   </div>
-
 </section>
 
 <!-- FEATURES -->
 <section class="features">
-
   <div class="feature">
     <h4>DATA ANALYTICS</h4>
     <p>Transforming raw data into meaningful insights.</p>
@@ -232,7 +231,6 @@
     <h4>VISUALIZATION</h4>
     <p>Creating dashboards using Power BI & Tableau.</p>
   </div>
-
 </section>
 
 <!-- ABOUT -->
@@ -247,7 +245,6 @@
 
   <div class="timeline">
 
-    <!-- EDUCATION -->
     <h3>Education</h3>
 
     <div class="timeline-item">
@@ -259,7 +256,6 @@
       </div>
     </div>
 
-    <!-- EXPERIENCE -->
     <h3>Experience</h3>
 
     <div class="timeline-item">
@@ -273,3 +269,6 @@
 
   </div>
 </section>
+
+</body>
+</html>
