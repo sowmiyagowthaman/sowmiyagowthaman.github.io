@@ -25,7 +25,7 @@
 
     nav h2 {
       font-size: 18px;
-      color: #6b4a2f;
+      color: #5a3825; /* darker brown */
       font-weight: 600;
     }
 
@@ -36,141 +36,82 @@
       font-weight: 600;
     }
 
-    nav a:hover {
-      color: #6b4a2f;
-      transition: 0.3s;
-    }
-
-    /* HERO */
+    /* HERO SECTION */
     .hero {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 80px;
-    }
-
-    .hero-text {
-      max-width: 550px;
+      padding: 60px 80px 100px;
     }
 
     .hero-text h1 {
-      font-size: 70px;
+      font-size: 65px;
       margin: 0;
       line-height: 1.1;
     }
 
     .hero-text span {
-      color: #4b2e1e;
-      font-weight: bold;
+      color: #4b2e1e; /* DARK BROWN */
+      font-weight: 700;
     }
 
     .hero-text p {
       margin-top: 20px;
       font-size: 18px;
+      max-width: 500px;
       line-height: 1.6;
-      color: #444;
     }
 
-    /* BUTTON */
-    .btn {
-      display: inline-block;
-      margin-top: 30px;
-      padding: 12px 25px;
-      background: black;
-      color: white;
-      text-decoration: none;
-      border-radius: 25px;
-      font-size: 14px;
-    }
-
-    .btn:hover {
-      background: #4b2e1e;
-    }
-
-    /* IMAGE */
-    .hero-img img {
-      width: 350px;
-      height: 450px;
+    /* IMAGE STYLE */
+    .hero img {
+      width: 320px;
+      height: 420px;
       object-fit: cover;
-      border-radius: 180px;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+      border-radius: 40px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.2);
     }
 
-    /* FEATURES */
-    .features {
-      display: flex;
-      justify-content: space-around;
-      padding: 50px 80px;
-      text-align: center;
-    }
-
-    .feature {
-      max-width: 200px;
-    }
-
-    .feature h4 {
-      font-size: 14px;
-      margin-bottom: 10px;
-    }
-
-    .feature p {
-      font-size: 13px;
-      color: #666;
-    }
-
-    /* ABOUT */
-    #about {
-      padding: 80px;
-      background: #ffffff;
-    }
-
-    #about h2 {
-      font-size: 32px;
-      margin-bottom: 20px;
-    }
-
-    .about-intro {
-      max-width: 700px;
-      color: #444;
-      margin-bottom: 40px;
-    }
-
-    /* TIMELINE */
+    /* TIMELINE SECTION */
     .timeline {
-      position: relative;
-      margin-left: 20px;
-      padding-left: 20px;
-      border-left: 2px solid #d6cfc7;
+      background: #111;
+      color: white;
+      padding: 80px;
     }
 
-    .timeline h3 {
-      margin-top: 30px;
-      color: #4b2e1e;
+    .timeline-title {
+      text-align: center;
+      font-size: 35px;
+      margin-bottom: 50px;
+    }
+
+    .timeline-container {
+      display: flex;
+      justify-content: center;
+      position: relative;
+    }
+
+    .timeline-line {
+      width: 2px;
+      background: #777;
+      margin: 0 40px;
+    }
+
+    .timeline-left, .timeline-right {
+      width: 40%;
     }
 
     .timeline-item {
-      position: relative;
-      margin-bottom: 30px;
+      margin-bottom: 60px;
     }
 
-    .timeline-item .dot {
-      position: absolute;
-      left: -11px;
-      top: 5px;
-      width: 12px;
-      height: 12px;
-      background: #6b4a2f;
-      border-radius: 50%;
+    .date {
+      color: #c49a6c; /* gold/brown */
+      font-weight: bold;
     }
 
-    .timeline-item .content h4 {
-      margin: 0;
-      color: #6b4a2f;
-    }
-
-    .timeline-item .content p {
-      margin: 5px 0;
-      color: #555;
+    .timeline-item p {
+      margin-top: 8px;
+      line-height: 1.5;
     }
 
   </style>
@@ -180,120 +121,76 @@
 
 <!-- NAVBAR -->
 <nav>
-  <h2>Welcome! Take a look at my work and journey!</h2>
+  <h2>Welcome! Explore my journey</h2>
   <div>
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#">Projects</a>
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#timeline">Experience</a>
     <a href="#">Contact</a>
   </div>
 </nav>
 
 <!-- HERO -->
-<section class="hero" id="home">
+<section class="hero">
   <div class="hero-text">
-    <h1>
-      Hi,<br>
-      I'm <span>Sowmiya</span>
-    </h1>
-
+    <h1>Hi,<br>I'm <span>Sowmiya</span></h1>
     <p>
-      Analyst at HSBC | MSc Business Analytics (UoE ’24) <br>
-      Passionate about Business & Data Analytics in Finance
+      Analyst – HSBC | MSc Business Analytics (UoE ’24) <br>
+      Business & Data Analytics Enthusiast | Finance Domain
     </p>
-
-    <a href="#" class="btn">View Projects →</a>
   </div>
 
-  <div class="hero-img">
-    <img src="profile.jpeg">
-  </div>
+  <!-- Replace with your image link -->
+  <img src="https://via.placeholder.com/300">
 </section>
 
-<!-- FEATURES -->
-<section class="features">
-  <div class="feature">
-    <h4>DATA ANALYTICS</h4>
-    <p>Transforming raw data into meaningful insights.</p>
-  </div>
+<!-- TIMELINE -->
+<section id="timeline" class="timeline">
 
-  <div class="feature">
-    <h4>MACHINE LEARNING</h4>
-    <p>Building predictive models for better decisions.</p>
-  </div>
+  <h2 class="timeline-title">My Journey</h2>
 
-  <div class="feature">
-    <h4>BUSINESS INSIGHTS</h4>
-    <p>Bridging data with business strategy.</p>
-  </div>
-
-  <div class="feature">
-    <h4>VISUALIZATION</h4>
-    <p>Creating dashboards using Power BI & Tableau.</p>
-  </div>
-</section>
-
-<!-- ABOUT -->
-<section id="about">
-  <h2>About Me</h2>
-
-  <p class="about-intro">
-    Assistant Manager at HSBC with experience in data analysis, client onboarding, and process improvement within banking environments. 
-    Skilled in translating business requirements into actionable insights and building dashboards using Power BI, Excel, and Python.
-  </p>
-
-  <div class="timeline">
+  <div class="timeline-container">
 
     <!-- EDUCATION -->
-    <h3>Education</h3>
+    <div class="timeline-left">
 
-    <div class="timeline-item">
-      <span class="dot"></span>
-      <div class="content">
-        <h4>Sep 2023 – Sep 2024</h4>
-        <p><strong>MSc Business Analytics</strong></p>
-        <p>University of Exeter, UK</p>
+      <div class="timeline-item">
+        <span class="date">Aug 2018 – Jun 2022</span>
+        <p>B.E ECE – St. Joseph’s College</p>
       </div>
+
+      <div class="timeline-item">
+        <span class="date">Sep 2023 – Sep 2024</span>
+        <p>MSc Business Analytics – UoE</p>
+      </div>
+
     </div>
 
-    <div class="timeline-item">
-      <span class="dot"></span>
-      <div class="content">
-        <h4>Aug 2018 – Jun 2022</h4>
-        <p><strong>B.E. Electronics & Communication Engineering</strong></p>
-        <p>St. Joseph's College of Engineering, Chennai</p>
-      </div>
-    </div>
+    <!-- LINE -->
+    <div class="timeline-line"></div>
 
     <!-- EXPERIENCE -->
-    <h3>Experience</h3>
+    <div class="timeline-right">
 
-    <div class="timeline-item">
-      <span class="dot"></span>
-      <div class="content">
-        <h4>Oct 2025 – Present</h4>
-        <p><strong>Assistant Manager – HSBC</strong></p>
-        <p>Client onboarding, data validation, AML/KYC compliance, and dashboard reporting using Power BI.</p>
+      <div class="timeline-item">
+        <span class="date">Nov 2022 – Jul 2023</span>
+        <p>Accenture – Business Analyst</p>
       </div>
-    </div>
 
-    <div class="timeline-item">
-      <span class="dot"></span>
-      <div class="content">
-        <h4>Feb 2024 – Apr 2024</h4>
-        <p><strong>Supply Chain Data Analyst Intern – L&T</strong></p>
-        <p>Performed EDA using Python and built dashboards improving efficiency by 15%.</p>
+      <div class="timeline-item">
+        <span class="date">Feb 2024 – Apr 2024</span>
+        <p>L&T – Data Analyst Intern</p>
       </div>
-    </div>
 
-    <div class="timeline-item">
-      <span class="dot"></span>
-      <div class="content">
-        <h4>Nov 2022 – Jul 2023</h4>
-        <p><strong>Business Analyst – Accenture</strong></p>
-        <p>Worked on Sitecore & .NET, improved system stability by 25%, and gathered business requirements.</p>
+      <div class="timeline-item">
+        <span class="date">Oct 2025 – Present</span>
+        <p>HSBC – Assistant Manager</p>
       </div>
+
     </div>
 
   </div>
 </section>
+
+</body>
+</html>
