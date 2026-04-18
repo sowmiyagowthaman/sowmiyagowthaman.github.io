@@ -224,51 +224,274 @@
 
   <div class="timeline-container">
 
-    <!-- EDUCATION -->
-    <div class="timeline-left">
+   <!DOCTYPE html>
 
-      <div class="timeline-item">
-        <span class="date">Aug 2018 – Jun 2022</span>
-        <p>B.E ECE – St. Joseph’s College</p>
-      </div>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sowmiya Portfolio</title>
 
-      <div class="timeline-item">
-        <span class="date">Sep 2023 – Sep 2024</span>
-        <p>MSc Business Analytics – UoE</p>
-      </div>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
 
-    </div>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f4f2ee;
+      color: #1a1a1a;
+    }
 
-    <div class="timeline-line"></div>
+    /* NAVBAR */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 25px 80px;
+    }
 
-    <!-- EXPERIENCE -->
-    <div class="timeline-right">
+    nav h2 {
+      font-size: 18px;
+      color: #5a3825;
+      font-weight: 600;
+    }
 
-      <div class="timeline-item">
-        <span class="date">Nov 2022 – Jul 2023</span>
-        <p>Accenture – Business Analyst</p>
-      </div>
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: black;
+      font-weight: 600;
+    }
 
-      <div class="timeline-item">
-        <span class="date">Feb 2024 – Apr 2024</span>
-        <p>L&T – Data Analyst Intern</p>
-      </div>
+    /* HERO */
+    .hero {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 60px 80px 100px;
+    }
 
-      <div class="timeline-item">
-        <span class="date">Oct 2025 – Present</span>
-        <p>HSBC – Assistant Manager</p>
-      </div>
+    .hero-text h1 {
+      font-size: 65px;
+      margin: 0;
+      line-height: 1.1;
+    }
 
-    </div>
+    .hero-text span {
+      color: #4b2e1e;
+      font-weight: 700;
+    }
+
+    .hero-text p {
+      margin-top: 20px;
+      font-size: 18px;
+      max-width: 500px;
+      line-height: 1.6;
+    }
+
+    .hero img {
+      width: 320px;
+      height: 420px;
+      object-fit: cover;
+      border-radius: 40px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+    }
+
+    /* ABOUT */
+    .about {
+      padding: 80px;
+      text-align: center;
+    }
+
+    .about h2 {
+      font-size: 32px;
+      margin-bottom: 20px;
+      color: #4b2e1e;
+    }
+
+    .about p {
+      max-width: 700px;
+      margin: auto;
+      line-height: 1.7;
+      font-size: 17px;
+    }
+
+    /* TIMELINE */
+    .timeline {
+      background: #f4f2ee; /* FIXED (was black) */
+      color: #1a1a1a;
+      padding: 80px;
+    }
+
+    .timeline-title {
+      text-align: center;
+      font-size: 35px;
+      margin-bottom: 50px;
+      color: #4b2e1e;
+    }
+
+    .timeline-container {
+      display: flex;
+      justify-content: center;
+      position: relative;
+    }
+
+    .timeline-line {
+      width: 2px;
+      background: #d1c4b8;
+      margin: 0 40px;
+    }
+
+    .timeline-left, .timeline-right {
+      width: 40%;
+    }
+
+    .timeline-item {
+      margin-bottom: 60px;
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+      transition: 0.3s;
+    }
+
+    .timeline-item:hover {
+      transform: translateY(-5px);
+    }
+
+    /* MOVE ACCENTURE DOWN */
+    .timeline-right .timeline-item:first-child {
+      margin-top: 40px;
+    }
+
+    .date {
+      color: #c49a6c;
+      font-weight: bold;
+    }
+
+    .timeline-item p {
+      margin-top: 8px;
+      line-height: 1.5;
+    }
+
+    /* CONTACT */
+    .contact {
+      padding: 80px;
+      text-align: center;
+    }
+
+    .contact h2 {
+      font-size: 30px;
+      margin-bottom: 20px;
+      color: #4b2e1e;
+    }
+
+    .contact p {
+      font-size: 18px;
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav>
+  <h2>Welcome! Explore my journey</h2>
+  <div>
+    <a href="#">Home</a>
+    <a href="#about">About</a>
+    <a href="#timeline">Experience</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+
+<section class="hero">
+  <div class="hero-text">
+    <h1>Hi,<br>I'm <span>Sowmiya</span></h1>
+    <p>
+      Analyst – HSBC | MSc Business Analytics (UoE ’24) <br>
+      Business & Data Analytics Enthusiast | Finance Domain
+    </p>
+  </div>
+
+  <img src="profile.jpeg">
+</section>
+
+<!-- ABOUT -->
+
+<section id="about" class="about">
+  <h2>About Me</h2>
+  <p>
+    I am a Business Analytics graduate with a strong passion for data-driven decision making.
+    With experience in analytics, finance, and consulting, I enjoy transforming data into
+    meaningful insights that drive business impact.
+  </p>
+</section>
+
+<!-- TIMELINE -->
+
+<section id="timeline" class="timeline">
+
+  <h2 class="timeline-title">My Journey</h2>
+
+  <div class="timeline-container">
+
+```
+<!-- EDUCATION -->
+<div class="timeline-left">
+
+  <div class="timeline-item">
+    <span class="date">Aug 2018 – Jun 2022</span>
+    <p>B.E ECE – St. Joseph’s College</p>
+  </div>
+
+  <div class="timeline-item">
+    <span class="date">Sep 2023 – Sep 2024</span>
+    <p>MSc Business Analytics – UoE</p>
+  </div>
+
+</div>
+
+<!-- LINE -->
+<div class="timeline-line"></div>
+
+<!-- EXPERIENCE -->
+<div class="timeline-right">
+
+  <div class="timeline-item">
+    <span class="date">Nov 2022 – Jul 2023</span>
+    <p>Accenture – Business Analyst</p>
+  </div>
+
+  <div class="timeline-item">
+    <span class="date">Feb 2024 – Apr 2024</span>
+    <p>L&T – Data Analyst Intern</p>
+  </div>
+
+  <div class="timeline-item">
+    <span class="date">Oct 2025 – Present</span>
+    <p>HSBC – Assistant Manager</p>
+  </div>
+
+</div>
+```
 
   </div>
 </section>
 
 <!-- CONTACT -->
+
 <section id="contact" class="contact">
   <h2>Contact</h2>
-  <p>Email: sowmiya.gs0609@gmail.com@gmail.com</p>
+  <p>Email: yourmail@gmail.com</p>
 </section>
 
 </body>
 </html>
+
