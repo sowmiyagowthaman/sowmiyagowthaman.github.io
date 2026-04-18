@@ -1,4 +1,156 @@
 <!DOCTYPE html>
+<html>
+<head>
+  <title>Sowmiya Portfolio</title>
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f4f2ee;
+      color: #1a1a1a;
+    }
+
+    /* NAVBAR */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 25px 80px;
+    }
+
+    nav h2 {
+      font-size: 18px;
+      color: #5a3825;
+      font-weight: 600;
+    }
+
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: black;
+      font-weight: 600;
+      position: relative;
+    }
+
+    nav a::after {
+      content: '';
+      width: 0;
+      height: 2px;
+      background: #5a3825;
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      transition: 0.3s;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    /* HERO */
+    .hero {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 60px 80px 100px;
+    }
+
+    .hero-text h1 {
+      font-size: 65px;
+      margin: 0;
+      line-height: 1.1;
+    }
+
+    .hero-text span {
+      color: #4b2e1e;
+      font-weight: 700;
+    }
+
+    .hero-text p {
+      margin-top: 20px;
+      font-size: 18px;
+      max-width: 500px;
+      line-height: 1.6;
+    }
+
+    .hero img {
+      width: 320px;
+      height: 420px;
+      object-fit: cover;
+      border-radius: 40px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+      transition: 0.3s;
+    }
+
+    .hero img:hover {
+      transform: scale(1.05);
+    }
+
+    /* ABOUT */
+    .about {
+      padding: 80px;
+      text-align: center;
+    }
+
+    .about h2 {
+      font-size: 32px;
+      margin-bottom: 20px;
+      color: #4b2e1e;
+    }
+
+    .about p {
+      max-width: 700px;
+      margin: auto;
+      line-height: 1.7;
+      font-size: 17px;
+    }
+
+    /* TIMELINE */
+    .timeline {
+      background: #111;
+      color: white;
+      padding: 80px;
+    }
+
+    .timeline-title {
+      text-align: center;
+      font-size: 35px;
+      margin-bottom: 60px;
+    }
+
+    .timeline-container {
+      display: flex;
+      justify-content: center;
+      position: relative;
+    }
+
+    .timeline-line {
+      width: 3px;
+      background: #777;
+      margin: 0 40px;
+    }
+
+    .timeline-left, .timeline-right {
+      width: 40%;
+    }
+
+    .timeline-item {
+      margin-bottom: 60px;
+      background: #1c1c1c;
+      padding: 20px;
+      border-radius: 12px;
+      transition: 0.3s;
+    }
+
+    .timeline-item:hover {
+      transform: translateY(-5px);
+      background: #262626;
+    }
 
     .date {
       color: #c49a6c;
@@ -60,9 +212,9 @@
   <h2>About Me</h2>
   <p>
     I’ve always believed in growing through experience and stepping beyond what’s familiar. From India to studying in the UK at the University of Exeter,
-    my journey has been shaped by opportunities that challenged and changed me. Receiving the Global Excellence Scholarship was especially meaningful—it 
-    gave me the chance to pursue that experience and pushed me to make the most of it. Since then, I’ve developed a global outlook, learned to adapt quickly,
-    and grown both personally and professionally.  I’m now looking for opportunities where I can continue to grow and build on these experiences.
+    my journey has been shaped by opportunities that challenged and changed me. Receiving the Global Excellence Scholarship was meaningful as it gave me
+    the chance to pursue that experience and pushed me to make the most of it. Since then, I’ve developed a global outlook, learned to adapt quickly,
+    and grown both personally and professionally. I’m now looking for opportunities where I can continue to grow and build on these experiences.
   </p>
 </section>
 
@@ -77,3 +229,47 @@
     <div class="timeline-left">
 
       <div class="timeline-item">
+        <span class="date">Aug 2018 – Jun 2022</span>
+        <p>B.E ECE – St. Joseph’s College</p>
+      </div>
+
+      <div class="timeline-item">
+        <span class="date">Sep 2023 – Sep 2024</span>
+        <p>MSc Business Analytics – UoE</p>
+      </div>
+
+    </div>
+
+    <div class="timeline-line"></div>
+
+    <!-- EXPERIENCE -->
+    <div class="timeline-right">
+
+      <div class="timeline-item">
+        <span class="date">Nov 2022 – Jul 2023</span>
+        <p>Accenture – Business Analyst</p>
+      </div>
+
+      <div class="timeline-item">
+        <span class="date">Feb 2024 – Apr 2024</span>
+        <p>L&T – Data Analyst Intern</p>
+      </div>
+
+      <div class="timeline-item">
+        <span class="date">Oct 2025 – Present</span>
+        <p>HSBC – Assistant Manager</p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact">
+  <h2>Contact</h2>
+  <p>Email: sowmiya.gs0609@gmail.com</p>
+</section>
+
+</body>
+</html>
