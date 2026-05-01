@@ -1,274 +1,604 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Sowmiya Portfolio</title>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Sowmiya Gowthaman — Business & Data Analyst</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --navy: #0f1b2d;
+    --navy2: #162236;
+    --blue: #1a6bff;
+    --blue-light: #e8f0ff;
+    --teal: #00b8a3;
+    --teal-light: #e0f9f6;
+    --white: #ffffff;
+    --off: #f7f8fc;
+    --text: #1a1f2e;
+    --muted: #5a6478;
+    --border: #e4e8f0;
+    --card: #ffffff;
+    --font-head: 'Syne', sans-serif;
+    --font-body: 'DM Sans', sans-serif;
+    --radius: 14px;
+    --radius-sm: 8px;
+    --shadow: 0 2px 20px rgba(26,107,255,0.08);
+    --shadow-hover: 0 8px 32px rgba(26,107,255,0.16);
+  }
 
-  <style>
-    html {
-      scroll-behavior: smooth;
-    }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
 
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: #f4f2ee;
-      color: #1a1a1a;
-    }
+  body {
+    font-family: var(--font-body);
+    background: var(--off);
+    color: var(--text);
+    line-height: 1.65;
+    font-size: 15px;
+    overflow-x: hidden;
+  }
 
-    /* NAVBAR */
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 25px 80px;
-    }
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(255,255,255,0.88);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 clamp(1.5rem, 5vw, 4rem); height: 60px;
+  }
+  .nav-logo {
+    font-family: var(--font-head); font-weight: 700; font-size: 1.1rem;
+    color: var(--navy); text-decoration: none; letter-spacing: -0.02em;
+  }
+  .nav-logo span { color: var(--blue); }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    font-size: 13px; font-weight: 500; color: var(--muted);
+    text-decoration: none; letter-spacing: 0.02em; transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--blue); }
+  .nav-cta {
+    background: var(--blue); color: #fff; font-family: var(--font-body);
+    font-weight: 500; font-size: 13px; padding: 8px 18px;
+    border-radius: 40px; text-decoration: none; transition: all 0.2s;
+    border: none; cursor: pointer;
+  }
+  .nav-cta:hover { background: #0d56d4; transform: translateY(-1px); }
 
-    nav h2 {
-      font-size: 18px;
-      color: #5a3825;
-      font-weight: 600;
-    }
+  #hero {
+    min-height: 100vh;
+    background: var(--navy);
+    display: flex; align-items: center;
+    padding: clamp(5rem, 10vw, 8rem) clamp(1.5rem, 8vw, 6rem) 4rem;
+    position: relative; overflow: hidden;
+  }
+  .hero-grid-bg {
+    position: absolute; inset: 0; z-index: 0;
+    background-image:
+      linear-gradient(rgba(26,107,255,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(26,107,255,0.04) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+  .hero-blob {
+    position: absolute; width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(26,107,255,0.15) 0%, transparent 70%);
+    right: -100px; top: -100px; border-radius: 50%; z-index: 0;
+  }
+  .hero-blob2 {
+    position: absolute; width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(0,184,163,0.1) 0%, transparent 70%);
+    left: 30%; bottom: -50px; border-radius: 50%; z-index: 0;
+  }
+  .hero-content { position: relative; z-index: 1; max-width: 700px; }
+  .hero-eyebrow {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(26,107,255,0.15); border: 1px solid rgba(26,107,255,0.3);
+    border-radius: 40px; padding: 6px 14px; margin-bottom: 1.5rem;
+    font-size: 12px; font-weight: 500; color: #7fb3ff; letter-spacing: 0.05em;
+  }
+  .hero-eyebrow::before {
+    content: ''; width: 6px; height: 6px; border-radius: 50%;
+    background: var(--teal); flex-shrink: 0;
+    animation: pulse 2s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%,100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(0.8); }
+  }
+  .hero-name {
+    font-family: var(--font-head); font-size: clamp(2.8rem, 7vw, 5.5rem);
+    font-weight: 800; line-height: 1.0; letter-spacing: -0.03em;
+    color: var(--white); margin-bottom: 0.6rem;
+  }
+  .hero-name .accent { color: var(--blue); }
+  .hero-tagline {
+    font-size: clamp(1rem, 2.5vw, 1.2rem); color: rgba(255,255,255,0.55);
+    font-weight: 300; margin-bottom: 2rem; max-width: 520px; line-height: 1.7;
+  }
+  .hero-tagline strong { color: rgba(255,255,255,0.85); font-weight: 500; }
+  .hero-stats { display: flex; gap: 2rem; margin-bottom: 2.5rem; flex-wrap: wrap; }
+  .stat { text-align: left; }
+  .stat-num {
+    font-family: var(--font-head); font-size: 1.8rem; font-weight: 700;
+    color: var(--white); line-height: 1;
+  }
+  .stat-label { font-size: 12px; color: rgba(255,255,255,0.45); margin-top: 2px; }
+  .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--blue); color: #fff; padding: 12px 26px;
+    border-radius: 40px; font-weight: 500; text-decoration: none;
+    font-size: 14px; transition: all 0.25s; border: none; cursor: pointer;
+    font-family: var(--font-body);
+  }
+  .btn-primary:hover { background: #0d56d4; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(26,107,255,0.35); }
+  .btn-ghost {
+    border: 1px solid rgba(255,255,255,0.2); color: rgba(255,255,255,0.8);
+    padding: 12px 26px; border-radius: 40px; font-weight: 500;
+    text-decoration: none; font-size: 14px; transition: all 0.25s;
+    font-family: var(--font-body);
+  }
+  .btn-ghost:hover { border-color: rgba(255,255,255,0.5); color: #fff; background: rgba(255,255,255,0.05); }
 
-    nav a {
-      margin: 0 15px;
-      text-decoration: none;
-      color: black;
-      font-weight: 600;
-      position: relative;
-    }
+  section { padding: clamp(3rem, 8vw, 6rem) clamp(1.5rem, 8vw, 6rem); }
+  .section-label {
+    font-family: var(--font-head); font-size: 11px; font-weight: 600;
+    color: var(--blue); letter-spacing: 0.15em; text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+  .section-title {
+    font-family: var(--font-head); font-size: clamp(1.6rem, 4vw, 2.4rem);
+    font-weight: 700; color: var(--text); letter-spacing: -0.02em; line-height: 1.15;
+    margin-bottom: 0.75rem;
+  }
+  .section-sub { color: var(--muted); max-width: 520px; line-height: 1.7; margin-bottom: 2.5rem; }
 
-    nav a::after {
-      content: '';
-      width: 0;
-      height: 2px;
-      background: #5a3825;
-      position: absolute;
-      bottom: -5px;
-      left: 0;
-      transition: 0.3s;
-    }
+  #skills { background: var(--white); }
+  .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }
+  .skill-card {
+    border: 1px solid var(--border); border-radius: var(--radius);
+    padding: 1.25rem 1.5rem; background: var(--off); transition: all 0.25s;
+  }
+  .skill-card:hover { border-color: var(--blue); transform: translateY(-3px); box-shadow: var(--shadow-hover); background: var(--white); }
+  .skill-icon {
+    width: 40px; height: 40px; border-radius: 10px;
+    background: var(--blue-light); display: flex; align-items: center;
+    justify-content: center; margin-bottom: 0.75rem; font-size: 18px;
+  }
+  .skill-icon.teal-bg { background: var(--teal-light); }
+  .skill-name { font-family: var(--font-head); font-weight: 600; font-size: 0.92rem; margin-bottom: 0.35rem; }
+  .skill-tools { font-size: 12px; color: var(--muted); line-height: 1.6; }
 
-    nav a:hover::after {
-      width: 100%;
-    }
+  #projects { background: var(--off); }
+  .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+  .project-card {
+    background: var(--white); border: 1px solid var(--border); border-radius: var(--radius);
+    padding: 1.75rem; transition: all 0.3s; position: relative; overflow: hidden;
+  }
+  .project-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+    background: linear-gradient(90deg, var(--blue), var(--teal));
+    transform: scaleX(0); transform-origin: left; transition: transform 0.3s;
+  }
+  .project-card:hover::before { transform: scaleX(1); }
+  .project-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); border-color: transparent; }
+  .project-header { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 0.75rem; gap: 8px; }
+  .project-tag {
+    font-size: 11px; font-weight: 600; color: var(--blue);
+    background: var(--blue-light); border-radius: 20px; padding: 3px 10px;
+    white-space: nowrap; letter-spacing: 0.04em;
+  }
+  .project-tag.teal { color: #007a6e; background: var(--teal-light); }
+  .project-title {
+    font-family: var(--font-head); font-size: 1.05rem; font-weight: 700;
+    color: var(--text); margin-bottom: 0.5rem; line-height: 1.3;
+  }
+  .project-desc { font-size: 13.5px; color: var(--muted); line-height: 1.7; margin-bottom: 1rem; }
+  .project-impact {
+    display: flex; align-items: center; gap: 6px; margin-bottom: 1rem;
+    font-size: 13px; font-weight: 500; color: #007a6e;
+  }
+  .project-impact::before { content: '↑'; font-size: 14px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; }
+  .tech-tag {
+    font-size: 11px; color: var(--muted); background: var(--off);
+    border: 1px solid var(--border); border-radius: 6px; padding: 3px 9px;
+  }
+  .project-link {
+    display: inline-flex; align-items: center; gap: 4px; font-size: 12px;
+    font-weight: 600; color: var(--blue); text-decoration: none; margin-top: 1rem;
+    transition: gap 0.2s;
+  }
+  .project-link:hover { gap: 8px; }
 
-    /* HERO */
-    .hero {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 60px 80px 100px;
-    }
+  #experience { background: var(--white); }
+  .timeline { position: relative; padding-left: 28px; }
+  .timeline::before {
+    content: ''; position: absolute; left: 7px; top: 6px; bottom: 0;
+    width: 2px; background: linear-gradient(to bottom, var(--blue), var(--teal), transparent);
+  }
+  .timeline-item { position: relative; margin-bottom: 2.5rem; }
+  .timeline-dot {
+    position: absolute; left: -28px; top: 6px;
+    width: 16px; height: 16px; border-radius: 50%;
+    background: var(--white); border: 2px solid var(--blue); z-index: 1;
+    transition: all 0.2s;
+  }
+  .timeline-item:hover .timeline-dot { background: var(--blue); transform: scale(1.2); }
+  .timeline-card {
+    background: var(--off); border: 1px solid var(--border); border-radius: var(--radius);
+    padding: 1.25rem 1.5rem; transition: all 0.25s;
+  }
+  .timeline-item:hover .timeline-card { border-color: var(--blue); box-shadow: var(--shadow); }
+  .timeline-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; flex-wrap: wrap; margin-bottom: 0.3rem; }
+  .timeline-role { font-family: var(--font-head); font-weight: 700; font-size: 0.95rem; color: var(--text); }
+  .timeline-date { font-size: 12px; color: var(--muted); white-space: nowrap; }
+  .timeline-company { font-size: 13px; font-weight: 500; color: var(--blue); margin-bottom: 0.6rem; }
+  .timeline-bullets { padding-left: 1rem; margin: 0; }
+  .timeline-bullets li { font-size: 13px; color: var(--muted); margin-bottom: 4px; line-height: 1.6; }
+  .timeline-bullets li strong { color: var(--text); font-weight: 500; }
 
-    .hero-text h1 {
-      font-size: 65px;
-      margin: 0;
-      line-height: 1.1;
-    }
+  #education { background: var(--off); }
+  .edu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+  .edu-card {
+    background: var(--white); border: 1px solid var(--border); border-radius: var(--radius);
+    padding: 1.5rem; transition: all 0.25s;
+  }
+  .edu-card:hover { border-color: var(--blue); box-shadow: var(--shadow-hover); transform: translateY(-2px); }
+  .edu-badge {
+    width: 44px; height: 44px; border-radius: 12px; margin-bottom: 1rem;
+    background: var(--navy); display: flex; align-items: center; justify-content: center;
+    font-family: var(--font-head); font-weight: 800; font-size: 14px; color: #fff;
+  }
+  .edu-degree { font-family: var(--font-head); font-weight: 700; font-size: 0.95rem; color: var(--text); margin-bottom: 0.25rem; }
+  .edu-school { font-size: 13px; color: var(--blue); font-weight: 500; margin-bottom: 0.2rem; }
+  .edu-date { font-size: 12px; color: var(--muted); margin-bottom: 0.75rem; }
+  .edu-note { font-size: 12.5px; color: var(--muted); line-height: 1.6; border-top: 1px solid var(--border); padding-top: 0.75rem; }
 
-    .hero-text span {
-      color: #4b2e1e;
-      font-weight: 700;
-    }
+  #certifications { background: var(--white); }
+  .certs-row { display: flex; flex-wrap: wrap; gap: 12px; }
+  .cert-chip {
+    display: flex; align-items: center; gap: 8px;
+    border: 1px solid var(--border); border-radius: 40px;
+    padding: 8px 16px; background: var(--off); transition: all 0.2s;
+    font-size: 13px; color: var(--text); font-weight: 500;
+  }
+  .cert-chip:hover { border-color: var(--blue); background: var(--blue-light); color: var(--blue); }
+  .cert-chip::before {
+    content: '✓'; width: 20px; height: 20px; border-radius: 50%;
+    background: var(--blue); color: #fff; font-size: 10px; font-weight: 700;
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  }
 
-    .hero-text p {
-      margin-top: 20px;
-      font-size: 18px;
-      max-width: 500px;
-      line-height: 1.6;
-    }
+  #contact { background: var(--navy); color: #fff; text-align: center; }
+  #contact .section-title { color: #fff; }
+  #contact .section-sub { color: rgba(255,255,255,0.55); margin: 0 auto 2rem; }
+  .contact-links { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  .contact-link {
+    display: flex; align-items: center; gap: 8px; padding: 12px 22px;
+    border: 1px solid rgba(255,255,255,0.15); border-radius: 40px;
+    color: rgba(255,255,255,0.8); text-decoration: none; font-size: 13.5px;
+    font-weight: 500; transition: all 0.25s;
+  }
+  .contact-link:hover { border-color: var(--blue); background: rgba(26,107,255,0.15); color: #fff; }
+  .contact-badge {
+    margin-top: 2.5rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.08);
+    font-size: 12px; color: rgba(255,255,255,0.3);
+  }
+  .open-badge {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: rgba(0,184,163,0.15); border: 1px solid rgba(0,184,163,0.3);
+    border-radius: 40px; padding: 6px 14px; font-size: 12px; font-weight: 500; color: #4dd6c8;
+    margin-bottom: 1.5rem;
+  }
+  .open-badge::before {
+    content: ''; width: 6px; height: 6px; border-radius: 50%;
+    background: var(--teal); animation: pulse 2s ease-in-out infinite;
+  }
 
-    .hero img {
-      width: 320px;
-      height: 420px;
-      object-fit: cover;
-      border-radius: 40px;
-      box-shadow: 0 15px 40px rgba(0,0,0,0.2);
-      transition: 0.3s;
-    }
+  footer {
+    text-align: center; padding: 1.5rem; background: #0a1424;
+    font-size: 12px; color: rgba(255,255,255,0.25);
+  }
 
-    .hero img:hover {
-      transform: scale(1.05);
-    }
+  .fade-up {
+    opacity: 0; transform: translateY(24px);
+    transition: opacity 0.55s ease, transform 0.55s ease;
+  }
+  .fade-up.visible { opacity: 1; transform: none; }
 
-    /* ABOUT */
-    .about {
-      padding: 80px;
-      text-align: center;
-    }
-
-    .about h2 {
-      font-size: 32px;
-      margin-bottom: 20px;
-      color: #4b2e1e;
-    }
-
-    .about p {
-      max-width: 700px;
-      margin: auto;
-      line-height: 1.7;
-      font-size: 17px;
-    }
-
-    /* TIMELINE */
-    .timeline {
-      background: #111;
-      color: white;
-      padding: 80px;
-    }
-
-    .timeline-title {
-      text-align: center;
-      font-size: 35px;
-      margin-bottom: 60px;
-    }
-
-    .timeline-container {
-      display: flex;
-      justify-content: center;
-      position: relative;
-    }
-
-    .timeline-line {
-      width: 3px;
-      background: #777;
-      margin: 0 40px;
-    }
-
-    .timeline-left, .timeline-right {
-      width: 40%;
-    }
-
-    .timeline-item {
-      margin-bottom: 60px;
-      background: #1c1c1c;
-      padding: 20px;
-      border-radius: 12px;
-      transition: 0.3s;
-    }
-
-    .timeline-item:hover {
-      transform: translateY(-5px);
-      background: #262626;
-    }
-
-    .date {
-      color: #c49a6c;
-      font-weight: bold;
-    }
-
-    .timeline-item p {
-      margin-top: 8px;
-      line-height: 1.5;
-    }
-
-    /* CONTACT */
-    .contact {
-      padding: 80px;
-      text-align: center;
-    }
-
-    .contact h2 {
-      font-size: 30px;
-      margin-bottom: 20px;
-      color: #4b2e1e;
-    }
-
-    .contact p {
-      font-size: 18px;
-    }
-
-  </style>
+  @media (max-width: 600px) {
+    .nav-links { display: none; }
+    .hero-stats { gap: 1.2rem; }
+  }
+</style>
 </head>
-
 <body>
 
-<!-- NAVBAR -->
 <nav>
-  <h2>Welcome! Explore my journey</h2>
-  <div>
-    <a href="#">Home</a>
-    <a href="#about">About</a>
-    <a href="#timeline">Experience</a>
-    <a href="#contact">Contact</a>
-  </div>
+  <a class="nav-logo" href="#hero">SG<span>.</span></a>
+  <ul class="nav-links">
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a class="nav-cta" href="Sowmiya_Resume.pdf" download>Download CV</a>
 </nav>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-text">
-    <h1>Hi,<br>I'm <span>Sowmiya</span></h1>
-    <p>
-      Analyst – HSBC | MSc Business Analytics (UoE ’24) <br>
-      Business & Data Analytics Enthusiast | Finance Domain
+<section id="hero">
+  <div class="hero-grid-bg"></div>
+  <div class="hero-blob"></div>
+  <div class="hero-blob2"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Open to BA / DA roles in Chennai</div>
+    <h1 class="hero-name">Sowmiya<br><span class="accent">Gowthaman</span></h1>
+    <p class="hero-tagline">
+      <strong>Business & Data Analyst</strong> with experience at HSBC, Accenture, and L&T.
+      I turn messy data into decisions — through Power BI dashboards, Python analysis, and structured business thinking.
     </p>
-  </div>
-
-  <img src="profile.jpeg">
-</section>
-
-<!-- ABOUT -->
-<section id="about" class="about">
-  <h2>About Me</h2>
-  <p>
-    I am a Business Analytics graduate with a strong passion for data-driven decision making.
-    With experience in analytics, finance, and consulting, I enjoy transforming data into
-    meaningful insights that drive business impact.
-  </p>
-</section>
-
-<!-- TIMELINE -->
-<section id="timeline" class="timeline">
-
-  <h2 class="timeline-title">My Journey</h2>
-
-  <div class="timeline-container">
-
-    <!-- EDUCATION -->
-    <div class="timeline-left">
-
-      <div class="timeline-item">
-        <span class="date">Aug 2018 – Jun 2022</span>
-        <p>B.E ECE – St. Joseph’s College</p>
+    <div class="hero-stats">
+      <div class="stat">
+        <div class="stat-num">2+</div>
+        <div class="stat-label">Years experience</div>
       </div>
-
-      <div class="timeline-item">
-        <span class="date">Sep 2023 – Sep 2024</span>
-        <p>MSc Business Analytics – UoE</p>
+      <div class="stat">
+        <div class="stat-num">3</div>
+        <div class="stat-label">Companies</div>
       </div>
-
+      <div class="stat">
+        <div class="stat-num">MSc</div>
+        <div class="stat-label">Business Analytics, UoE</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">BFSI</div>
+        <div class="stat-label">KYC / AML domain</div>
+      </div>
     </div>
-
-    <div class="timeline-line"></div>
-
-    <!-- EXPERIENCE -->
-    <div class="timeline-right">
-
-      <div class="timeline-item">
-        <span class="date">Nov 2022 – Jul 2023</span>
-        <p>Accenture – Business Analyst</p>
-      </div>
-
-      <div class="timeline-item">
-        <span class="date">Feb 2024 – Apr 2024</span>
-        <p>L&T – Data Analyst Intern</p>
-      </div>
-
-      <div class="timeline-item">
-        <span class="date">Oct 2025 – Present</span>
-        <p>HSBC – Assistant Manager</p>
-      </div>
-
+    <div class="hero-actions">
+      <a class="btn-primary" href="#projects">See my work</a>
+      <a class="btn-ghost" href="#contact">Get in touch</a>
     </div>
-
   </div>
 </section>
 
-<!-- CONTACT -->
-<section id="contact" class="contact">
-  <h2>Contact</h2>
-  <p>Email: sowmiya.gs0609@gmail.com</p>
+<section id="skills">
+  <div class="fade-up">
+    <div class="section-label">What I bring</div>
+    <h2 class="section-title">Skills & Expertise</h2>
+    <p class="section-sub">A mix of technical and business skills built across analytics, consulting, and BFSI domains.</p>
+  </div>
+  <div class="skills-grid fade-up">
+    <div class="skill-card">
+      <div class="skill-icon">📊</div>
+      <div class="skill-name">Data Visualisation</div>
+      <div class="skill-tools">Power BI (DAX), Tableau, Excel dashboards — turning numbers into decisions</div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon">🐍</div>
+      <div class="skill-name">Python & Analytics</div>
+      <div class="skill-tools">Pandas, Matplotlib, Seaborn, Flask — EDA to full analytics apps</div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon teal-bg">🗄️</div>
+      <div class="skill-name">SQL</div>
+      <div class="skill-tools">MySQL, PostgreSQL — joins, CTEs, aggregations, data extraction</div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon teal-bg">📋</div>
+      <div class="skill-name">Business Analysis</div>
+      <div class="skill-tools">BRD / FRD documentation, Visio / UML process flows, UAT, Agile</div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon">🏦</div>
+      <div class="skill-name">BFSI Domain</div>
+      <div class="skill-tools">AML / KYC compliance, client lifecycle management, regulatory reporting</div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon">☁️</div>
+      <div class="skill-name">Cloud & Tools</div>
+      <div class="skill-tools">Azure (AZ-900), Sitecore, .NET, Microsoft 365, Advanced Excel</div>
+    </div>
+  </div>
 </section>
 
+<section id="projects">
+  <div class="fade-up">
+    <div class="section-label">Proof of work</div>
+    <h2 class="section-title">Projects</h2>
+    <p class="section-sub">Real work with real outcomes. Each project shows how I approach a problem — not just tools used.</p>
+  </div>
+  <div class="projects-grid fade-up">
+    <div class="project-card">
+      <div class="project-header">
+        <span class="project-tag">Supply Chain</span>
+      </div>
+      <div class="project-title">L&T Supply Chain Analytics Dashboard</div>
+      <div class="project-desc">
+        Performed EDA on 10,000+ facade and glazing procurement records to surface bottlenecks and cost-saving opportunities. Built a Flask-based analytics app for non-technical stakeholders to access insights without analyst dependency.
+      </div>
+      <div class="project-impact">15% improvement in supply chain efficiency</div>
+      <div class="tags">
+        <span class="tech-tag">Python</span>
+        <span class="tech-tag">Pandas</span>
+        <span class="tech-tag">Flask</span>
+        <span class="tech-tag">Power BI</span>
+        <span class="tech-tag">Matplotlib</span>
+      </div>
+      <a class="project-link" href="https://github.com/sowmiyagowthaman" target="_blank">View on GitHub →</a>
+    </div>
+    <div class="project-card">
+      <div class="project-header">
+        <span class="project-tag teal">ML / Forecasting</span>
+      </div>
+      <div class="project-title">MSc Dissertation — Demand Forecasting Model</div>
+      <div class="project-desc">
+        Applied time series forecasting and machine learning models to predict business demand. Evaluated ARIMA, LSTM, and regression-based approaches, comparing accuracy across seasonal and non-seasonal datasets.
+      </div>
+      <div class="project-impact">University of Exeter, 2024</div>
+      <div class="tags">
+        <span class="tech-tag">Python</span>
+        <span class="tech-tag">Time Series</span>
+        <span class="tech-tag">ARIMA</span>
+        <span class="tech-tag">ML</span>
+        <span class="tech-tag">Jupyter</span>
+      </div>
+      <a class="project-link" href="mailto:sowmiya.gs0609@gmail.com">Request PDF →</a>
+    </div>
+    <div class="project-card">
+      <div class="project-header">
+        <span class="project-tag">BFSI Analytics</span>
+      </div>
+      <div class="project-title">HSBC KYC Operations Dashboard</div>
+      <div class="project-desc">
+        Designed and maintained 5+ Power BI dashboards tracking KYC onboarding SLAs, error rates, and team KPIs for 100+ client accounts. Reduced manual reporting time by ~30% through automated data refresh pipelines.
+      </div>
+      <div class="project-impact">~30% reduction in manual reporting time</div>
+      <div class="tags">
+        <span class="tech-tag">Power BI</span>
+        <span class="tech-tag">DAX</span>
+        <span class="tech-tag">Excel</span>
+        <span class="tech-tag">KYC/AML</span>
+      </div>
+      <a class="project-link" href="mailto:sowmiya.gs0609@gmail.com">Request demo →</a>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="fade-up">
+    <div class="section-label">Career journey</div>
+    <h2 class="section-title">Work Experience</h2>
+    <p class="section-sub">Cross-industry exposure across banking, IT consulting, and supply chain analytics.</p>
+  </div>
+  <div class="timeline fade-up">
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-card">
+        <div class="timeline-top">
+          <div class="timeline-role">Assistant Manager — VCIP Support</div>
+          <div class="timeline-date">Oct 2025 – Present</div>
+        </div>
+        <div class="timeline-company">HSBC · Chennai, India</div>
+        <ul class="timeline-bullets">
+          <li>Managed KYC/AML onboarding for <strong>100+ client accounts</strong> with zero regulatory breaches</li>
+          <li>Built <strong>5+ Power BI dashboards</strong> reducing manual reporting time by ~30%</li>
+          <li>Reduced onboarding turnaround time by <strong>20%</strong> through process re-engineering</li>
+          <li>Conducted root-cause data analysis using Advanced Excel (VLOOKUP, Power Query, pivot tables)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-card">
+        <div class="timeline-top">
+          <div class="timeline-role">Supply Chain Data Analyst Intern</div>
+          <div class="timeline-date">Feb – Apr 2024</div>
+        </div>
+        <div class="timeline-company">Larsen & Toubro Construction (L&T ECC) · Remote</div>
+        <ul class="timeline-bullets">
+          <li>EDA on <strong>10,000+ records</strong> using Python to identify supply chain inefficiencies</li>
+          <li>Delivered dashboards contributing to <strong>15% improvement</strong> in supply chain efficiency</li>
+          <li>Built Flask analytics app enabling real-time stakeholder decision support</li>
+        </ul>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-card">
+        <div class="timeline-top">
+          <div class="timeline-role">Business Analyst — Data & Operations</div>
+          <div class="timeline-date">Nov 2022 – Jul 2023</div>
+        </div>
+        <div class="timeline-company">Accenture · Chennai, India</div>
+        <ul class="timeline-bullets">
+          <li>Documented BRDs/FRDs and created Visio/UML process flows across 2 client projects</li>
+          <li>Contributed to Sitecore + .NET enhancements improving system stability by <strong>25%</strong></li>
+          <li>Designed UAT test cases achieving <strong>98%+ defect resolution</strong> before go-live</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="fade-up">
+    <div class="section-label">Academic background</div>
+    <h2 class="section-title">Education</h2>
+  </div>
+  <div class="edu-grid fade-up">
+    <div class="edu-card">
+      <div class="edu-badge">UoE</div>
+      <div class="edu-degree">MSc Business Analytics</div>
+      <div class="edu-school">University of Exeter, United Kingdom</div>
+      <div class="edu-date">Sep 2023 – Sep 2024</div>
+      <div class="edu-note">Modules: Data Mining, ML, Statistical Modelling, Python for Data Science. Dissertation: Demand forecasting using time series and ML models.</div>
+    </div>
+    <div class="edu-card">
+      <div class="edu-badge">SJC</div>
+      <div class="edu-degree">BE Electronics & Communication Engineering</div>
+      <div class="edu-school">St. Joseph's College of Engineering, Chennai</div>
+      <div class="edu-date">Aug 2018 – Jun 2022</div>
+      <div class="edu-note">Strong foundation in data systems, signal processing, and programming — a base that complements analytical problem-solving.</div>
+    </div>
+  </div>
+</section>
+
+<section id="certifications">
+  <div class="fade-up">
+    <div class="section-label">Credentials</div>
+    <h2 class="section-title">Certifications</h2>
+    <p class="section-sub" style="margin-bottom: 1.5rem;">Validated through globally recognised programmes.</p>
+  </div>
+  <div class="certs-row fade-up">
+    <div class="cert-chip">Microsoft Azure Fundamentals (AZ-900)</div>
+    <div class="cert-chip">Google Data Analytics Professional</div>
+    <div class="cert-chip">Excel Essential Training — Microsoft 365</div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="fade-up">
+    <div class="open-badge">Available for BA / DA roles in Chennai</div>
+    <h2 class="section-title">Let's connect</h2>
+    <p class="section-sub">I'm actively looking for Business Analyst and Data Analyst roles. If you're hiring or want to collaborate, reach out.</p>
+    <div class="contact-links">
+      <a class="contact-link" href="mailto:sowmiya.gs0609@gmail.com">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        sowmiya.gs0609@gmail.com
+      </a>
+      <a class="contact-link" href="https://www.linkedin.com/in/sowmiya-g-s-99053a1b7" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        LinkedIn
+      </a>
+      <a class="contact-link" href="https://github.com/sowmiyagowthaman" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+        GitHub
+      </a>
+      <a class="contact-link" href="tel:+916374218846">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.06 6.06l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        +91 63742 18846
+      </a>
+    </div>
+    <div class="contact-badge">Based in Chennai, India · Open to hybrid and remote roles too</div>
+  </div>
+</section>
+
+<footer>Built by Sowmiya Gowthaman · 2025</footer>
+
+<script>
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('visible'), i * 80);
+      }
+    });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+</script>
 </body>
 </html>
